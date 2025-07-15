@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int number, original, remainder, result = 0;
+
+    
+    scanf("%d", &number);
+
+    original = number;
+
+    while (original != 0) {
+        remainder = original % 10;            // extract last digit
+        result += remainder * remainder * remainder;  // cube and add
+        original /= 10;                       // remove last digit
+    }
+
+    
+    if (result == number) {
+        printf("Yes\n");
+    } else {
+        printf("No\n");
+    }
+
+    return 0;
+}
